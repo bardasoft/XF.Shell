@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:consts="clr-namespace:XF.Shell.Constants"
+             mc:Ignorable="d"
+             x:Class="XF.Shell.Views.FontIconPage">
+
+        <StackLayout
+            Spacing="8"
+            Orientation="Vertical"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="CenterAndExpand">
+
+            <Label
+                FontSize="24"
+                Text="{x:Static consts:IconFont.Xamarin}"
+                TextColor="HotPink"
+                FontFamily="{StaticResource MaterialFontFamily}"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
+            <Button
+                FontFamily="{StaticResource  MaterialFontFamily}"
+                FontSize="24"
+                TextColor="Lime"
+                BackgroundColor="Transparent"
+                Text="{Binding GithubIcon}"/>
+
+            <Image>
+                <Image.Source>
+                    <FontImageSource
+                        FontFamily="{StaticResource MaterialFontFamily}"
+                        Glyph="{x:Static consts:IconFont.Microsoft}"
+                        Size="24"
+                        Color="Purple"/>
+                </Image.Source>
+            </Image>
+
+    </StackLayout>
+
+</ContentPage>

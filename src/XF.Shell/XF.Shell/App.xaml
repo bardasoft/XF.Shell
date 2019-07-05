@@ -13,6 +13,24 @@
                 <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
             </OnPlatform>
 
+            <Style x:Key="LabelIconFontStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource MaterialFontFamily}"/>
+                <Setter Property="FontSize" Value="32"/>
+                <Setter Property="TextColor" Value="HotPink"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="ButtonIconFontStyle" TargetType="Button">
+                <Setter Property="FontFamily" Value="{StaticResource MaterialFontFamily}"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="FontSize" Value="32"/>
+                <Setter Property="WidthRequest" Value="32"/>
+                <Setter Property="HeightRequest" Value="32"/>
+                <Setter Property="TextColor" Value="Lime"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

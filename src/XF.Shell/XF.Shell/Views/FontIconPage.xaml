@@ -7,36 +7,78 @@
              mc:Ignorable="d"
              x:Class="XF.Shell.Views.FontIconPage">
 
+    <StackLayout
+        Spacing="8"
+        Padding="10"
+        Orientation="Vertical">
+
+        <Label
+            Text="x:Static"
+            FontSize="Small"
+            VerticalTextAlignment="Center"/>
         <StackLayout
-            Spacing="8"
-            Orientation="Vertical"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="CenterAndExpand">
-
+            Orientation="Horizontal">
             <Label
-                FontSize="24"
-                Text="{x:Static consts:IconFont.Xamarin}"
-                TextColor="HotPink"
                 FontFamily="{StaticResource MaterialFontFamily}"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Center"/>
+                Style="{StaticResource LabelIconFontStyle}"
+                Text="{x:Static consts:IconFont.Xamarin}"/>
+            <Label
+                FontFamily="{StaticResource MaterialFontFamily}"
+                Style="{StaticResource LabelIconFontStyle}"
+                Text="{x:Static consts:IconFont.Microsoft}"/>
+            <Label
+                FontFamily="{StaticResource MaterialFontFamily}"
+                Style="{StaticResource LabelIconFontStyle}"
+                Text="{x:Static consts:IconFont.Github}"/>
+        </StackLayout>
 
+        <Label
+            Text="Binding"
+            FontSize="Small"
+            VerticalTextAlignment="Center"/>
+        <StackLayout
+            Orientation="Horizontal">
             <Button
-                FontFamily="{StaticResource  MaterialFontFamily}"
-                FontSize="24"
-                TextColor="Lime"
-                BackgroundColor="Transparent"
-                Text="{Binding GithubIcon}"/>
+                FontFamily="{StaticResource MaterialFontFamily}"
+                Style="{StaticResource ButtonIconFontStyle}"
+                Text="{Binding AndroidIcon}"/>
+            <Button
+                FontFamily="{StaticResource MaterialFontFamily}"
+                Style="{StaticResource ButtonIconFontStyle}"
+                Text="{Binding AppleIcon}"/>
+            <Button
+                FontFamily="{StaticResource MaterialFontFamily}"
+                Style="{StaticResource ButtonIconFontStyle}"
+                Text="{Binding TwitchIcon}"/>
+        </StackLayout>
 
-            <Image>
-                <Image.Source>
-                    <FontImageSource
-                        FontFamily="{StaticResource MaterialFontFamily}"
-                        Glyph="{x:Static consts:IconFont.Microsoft}"
-                        Size="24"
-                        Color="Purple"/>
-                </Image.Source>
-            </Image>
+        <Label
+            Text="FontImageSource"
+            FontSize="Small"
+            VerticalTextAlignment="Center"/>
+
+        <FlexLayout
+            Wrap="Wrap"
+            Direction="Row"
+            FlexLayout.Grow="1"
+            JustifyContent="SpaceBetween"
+            BindableLayout.ItemsSource="{Binding Icons, Mode=OneTime}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                     <StackLayout x:DataType="x:String" Spacing="0">
+                        <Image>
+                            <Image.Source>
+                                <FontImageSource
+                                    FontFamily="{StaticResource MaterialFontFamily}"
+                                    Glyph="{Binding .}"
+                                    Size="32"
+                                    Color="Purple"/>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
 
     </StackLayout>
 
